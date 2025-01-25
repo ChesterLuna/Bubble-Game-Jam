@@ -28,7 +28,7 @@ public class CustomerSpawner : MonoBehaviour
         // }
     }
 
-    public void SpawnCustomer(int maxToppings)
+    public string[] SpawnCustomer(int maxToppings)
     {
         string[] ingredients = GenerateCustomerIngredients(maxToppings);
         string drinkBase = ingredients[0];
@@ -42,6 +42,9 @@ public class CustomerSpawner : MonoBehaviour
         Sprite speciesFace = ChooseRandom(currentSpecies.faceFeatures);
         face.sprite = speciesFace;
 
+        // Gives liked ingredients to the customer object
+        customerObject.GetComponent<Customer>().ingredients = ingredients;
+        return ingredients;
     }
 
     private Species GetSpecies(string drinkBase)
@@ -57,7 +60,7 @@ public class CustomerSpawner : MonoBehaviour
         return null;
     }
 
-    public string[] GenerateCustomerIngredients(int maxToppings)
+    private string[] GenerateCustomerIngredients(int maxToppings)
     {
         int toppingNum = Random.Range(0, maxToppings);
 
@@ -81,9 +84,15 @@ public class CustomerSpawner : MonoBehaviour
         return chosenToppings.ToArray();
     }
 
-    private dynamic ChooseRandom(dynamic[] choices)
+    private string ChooseRandom(string[] choices)
     {
-        dynamic chosenOption = choices[Random.Range(0, choices.Length)];
+        string chosenOption = choices[Random.Range(0, choices.Length)];
+        return chosenOption;
+    }
+    
+    private Sprite ChooseRandom(Sprite[] choices)
+    {
+        Sprite chosenOption = choices[Random.Range(0, choices.Length)];
         return chosenOption;
     }
 
