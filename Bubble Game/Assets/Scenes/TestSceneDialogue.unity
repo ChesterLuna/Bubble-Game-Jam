@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 1881418154}
   - component: {fileID: 1881418156}
   - component: {fileID: 1881418155}
+  - component: {fileID: 1881418157}
   m_Layer: 5
   m_Name: DialogueContent
   m_TagString: Untagged
@@ -451,27 +452,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'If i just keep
 
-
     writing here
-
 
     without any limits
 
 
-
-    and
-    with wide enough spacing
-
+    and with
+    wide enough spacing
 
     so things start to mess up,
 
-
     does-
 
-
-    yes.
-    yes it does.
-
+    yes. yes
+    it does.
 
     I need to fix that'
   m_isRightToLeft: 0
@@ -514,7 +508,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 50
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -552,6 +546,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881418153}
   m_CullTransparentMesh: 1
+--- !u!114 &1881418157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881418153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f28a937b7ca7e641b4ff2707b32f6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
