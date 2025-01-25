@@ -5,11 +5,19 @@ public class DrinkOptionHub : MonoBehaviour {
     public static DrinkOptionHub instance; // singleton instance
 
     //-- Information hub
+    public Dictionary<string, string> speciesPreferences = new Dictionary<string, string> {
+        { "fairy", "fruit" },
+        { "elf", "green" },
+        { "orc", "milk" },
+        { "dwarf", "oolong" },
+        { "tiefling", "black" }
+    };
+
     public Dictionary<string, string[]> dialogues = new Dictionary<string, string[]> {
         { "option1", new string[] {
-            "I want _",
-            "me want _",
-            "_ please"} }
+            "I want option1",
+            "me want option1",
+            "option1 please"} }
     };
 
     private void Awake() { // making things singleton
@@ -22,6 +30,5 @@ public class DrinkOptionHub : MonoBehaviour {
     }
 
     public void Start() {
-        Debug.Log(dialogues["option1"][0]);
     }
 }

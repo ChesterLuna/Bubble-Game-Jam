@@ -23,7 +23,7 @@ public class DialogueController : MonoBehaviour {
     public void DisplayPreference(string name, string preference) { // generates one dialogue and displays it
         string[] diagList;
         if (DrinkOptionHub.instance.dialogues.TryGetValue(preference, out diagList)) {
-            DisplayText("<color=green>" + name + "</color>: " + diagList[Random.Range(0, diagList.Length)].Replace("_", "<color=red>" + preference + "</color>"));
+            DisplayText("<color=green>" + name + "</color>: " + diagList[Random.Range(0, diagList.Length)]);
         }
     }
 }
