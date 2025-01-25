@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,37 +9,40 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] string[] bases;
 
 
-    void Start() {
-        print(GenerateCustomer(4));
+    void Start()
+    {
+        // string[]  ingredients = GenerateCustomer(4);
+
+        // foreach(var a in ingredients)
+        // {
+        //     print( a);
+        // }
     }
 
     
 
-    public string[] GenerateCustomer(int maxToppings)
+    public string[] GenerateCustomerIngredients(int maxToppings)
     {
         int toppingNum = Random.Range(0, maxToppings);
 
-        string[] chosenToppings = new string[0];
-        string chosenBase = "";
-
-        chosenBase = ChooseRandom(bases);
+        List<string> chosenToppings = new List<string>();
+        string chosenBase = ChooseRandom(bases);
+        
         // For now, just mix the base and the toppings.
-        chosenToppings.Append(chosenBase);
+        chosenToppings.Add(chosenBase);
 
         // Infinite Loop if toppingNum over availableIngredients
-        while (chosenToppings.Length < toppingNum)
+        while (chosenToppings.Count() < toppingNum + 1)
         {
             string randTopping = ChooseRandom(toppings);
 
-            if (chosenToppings.Contains(randTopping))
+            if (!chosenToppings.Contains(randTopping))
             {
-                chosenToppings.Append(randTopping);
+                chosenToppings.Add(randTopping);
             }
         }
 
-
-        return chosenToppings;
-
+        return chosenToppings.ToArray();
     }
 
     private string ChooseRandom(string[] strings)
