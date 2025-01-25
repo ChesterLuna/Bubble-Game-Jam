@@ -479,7 +479,7 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_colorMode: 2
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
+  m_wordSpacing: 5
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 50
@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f28a937b7ca7e641b4ff2707b32f6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueOptions: {fileID: 4900000, guid: 6b1f23933fc100946b507e14fd80e286, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
