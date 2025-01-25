@@ -45,10 +45,10 @@ public class CustomerSpawner : MonoBehaviour
         return chosenToppings.ToArray();
     }
 
-    private string ChooseRandom(string[] strings)
+    private dynamic ChooseRandom(dynamic[] choices)
     {
-        string chosenString = strings[Random.Range(0, strings.Length)];
-        return chosenString;
+        dynamic chosenOption = choices[Random.Range(0, choices.Length)];
+        return chosenOption;
     }
 
 }
