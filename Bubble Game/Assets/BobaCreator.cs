@@ -12,6 +12,7 @@ public class BobaCreator : MonoBehaviour
     GameObject toppings;
 
     [SerializeField] GameObject toppingPrefab;
+    [SerializeField] Customer customer;
 
     private void Start()
     {
@@ -57,8 +58,13 @@ public class BobaCreator : MonoBehaviour
         {
             Destroy(toppings.transform.GetChild(i).gameObject);
         }
+    }
 
-
+    public void ServeBoba()
+    {
+        currentToppings.Add(currentBase);
+        customer.CheckCorrectIngredients(currentToppings.ToArray());
+        DeleteBoba();
     }
 
 
