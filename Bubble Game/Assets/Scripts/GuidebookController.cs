@@ -19,4 +19,15 @@ public class GuidebookController : MonoBehaviour {
         textComponent.text = page1;
     }
 
+    public void swapPage() {
+        if (nextButton.activeInHierarchy) {
+            nextButton.SetActive(false);
+            prevButton.SetActive(true);
+            textComponent.text = page2;
+        } else {
+            nextButton.SetActive(true);
+            prevButton.SetActive(false);
+            textComponent.text = page1;
+        }
+    }
 }
