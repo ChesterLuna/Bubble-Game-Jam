@@ -86,12 +86,24 @@ public class CustomerSpawner : MonoBehaviour
 
     private string ChooseRandom(string[] choices)
     {
+        if(choices.Length == 0)
+        {
+            Debug.LogError("There are no string choices.");
+            return null;
+        }
+
         string chosenOption = choices[Random.Range(0, choices.Length)];
         return chosenOption;
     }
     
     private Sprite ChooseRandom(Sprite[] choices)
     {
+        if (choices.Length == 0)
+        {
+            Debug.LogError("There are no Sprite choices.");
+            return null;
+        }
+
         Sprite chosenOption = choices[Random.Range(0, choices.Length)];
         return chosenOption;
     }
