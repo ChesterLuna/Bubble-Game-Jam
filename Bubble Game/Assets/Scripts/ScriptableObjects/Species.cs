@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Species", menuName = "Scriptable Objects/Species")]
 public class Species : ScriptableObject
 {
-    [SerializeField] string speciesName;
-    [SerializeField] Sprite mainBody;
-    [SerializeField] Sprite[] faceFeatures;
+    public string speciesName;
+    public Sprite mainBody;
+    public Sprite[] faceFeatures;
     
 }
