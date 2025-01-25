@@ -10,7 +10,7 @@ public class DrinkOptionHub : MonoBehaviour {
         { "elf", "green" },
         { "orc", "milk" },
         { "dwarf", "oolong" },
-        { "tiefling", "black" }
+        { "demon", "black" }
     };
 
     public Dictionary<string, string[]> dialogues = new Dictionary<string, string[]> {
