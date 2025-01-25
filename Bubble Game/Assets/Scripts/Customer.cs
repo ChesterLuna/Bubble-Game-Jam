@@ -1,12 +1,28 @@
+using System.Linq;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
-    public string[] ingredients;
+    public string[] favoriteIngredients;
 
-    public bool checkCorrectIngredients(string[] chosenIngredients)
+    public void CheckCorrectIngredients(string[] chosenIngredients)
     {
-        // should check each ingredient
-        return true;
+        int correctIngredients = 0;
+        foreach (string ingredient in chosenIngredients)
+        {
+            if (favoriteIngredients.Contains(ingredient))
+            {
+                correctIngredients++;
+            }
+        }
+
+        // Daily score counts how many orders were perfect
+        // Global score counts how many ingredients were correct in perfect orders
+        if(correctIngredients == favoriteIngredients.Length)
+        {
+            ScoringSystem.instance.dailyScore++;
+            ScoringSystem.instance.globalScore += correctIngredients;
+        }
+        
     }
 }
