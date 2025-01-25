@@ -30,4 +30,18 @@ public class MainMenuController : MonoBehaviour {
         optionsButton.SetActive(true);
         creditsButton.SetActive(true);
     }
+
+    public void OpenCredits() {
+        credits.SetActive(true);
+        startButton.SetActive(false);
+        optionsButton.SetActive(false);
+        creditsButton.SetActive(false);
+    }
+
+    public void CloseCredits() {
+        credits.SetActive(false);
+        startButton.SetActive(true);
+        optionsButton.SetActive(true);
+        creditsButton.SetActive(true);
+    }
 }
