@@ -1,16 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CustomerSpawner : MonoBehaviour
 {
-    [SerializeField] string[] toppings ;
+    [SerializeField] string[] toppings;
     [SerializeField] string[] bases;
+
+    [SerializeField] ScriptableObject[] species;
+
+    [SerializeField] GameObject customerObject;
+    Image mainBody;
+    Image face;
 
 
     void Start()
     {
+        mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
+        face = customerObject.transform.Find("Feature (1)").GetComponent<Image>();
         // string[]  ingredients = GenerateCustomer(4);
 
         // foreach(var a in ingredients)
@@ -19,7 +28,34 @@ public class CustomerSpawner : MonoBehaviour
         // }
     }
 
-    
+    public void SpawnCustomer(int maxToppings)
+    {
+        string[] ingredients = GenerateCustomerIngredients(maxToppings);
+        string drinkBase = ingredients[0];
+        Species currentSpecies = GetSpecies(drinkBase);
+
+        // Generate Race
+        Sprite speciesBody = currentSpecies.mainBody;
+        mainBody.sprite = speciesBody;
+
+        // Generate Features
+        Sprite speciesFace = ChooseRandom(currentSpecies.faceFeatures);
+        face.sprite = speciesFace;
+
+    }
+
+    private Species GetSpecies(string drinkBase)
+    {
+        foreach (Species theSpecies in species)
+        {
+            if(theSpecies.speciesName == drinkBase)
+            {
+                return theSpecies;
+            }
+        }
+        Debug.LogError("Could not find a species related to that drinkBase");
+        return null;
+    }
 
     public string[] GenerateCustomerIngredients(int maxToppings)
     {
