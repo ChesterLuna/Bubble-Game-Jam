@@ -20,12 +20,9 @@ public class CustomerSpawner : MonoBehaviour
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
         face = customerObject.transform.Find("Feature (1)").GetComponent<Image>();
-        // string[]  ingredients = GenerateCustomer(4);
 
-        // foreach(var a in ingredients)
-        // {
-        //     print( a);
-        // }
+        toppings = DrinkOptionHub.instance.toppings;
+        bases = DrinkOptionHub.instance.bases;
     }
 
     public string[] SpawnCustomer(int maxToppings)
@@ -43,7 +40,7 @@ public class CustomerSpawner : MonoBehaviour
         face.sprite = speciesFace;
 
         // Gives liked ingredients to the customer object
-        customerObject.GetComponent<Customer>().ingredients = ingredients;
+        customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
         return ingredients;
     }
 
@@ -51,7 +48,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         foreach (Species theSpecies in species)
         {
-            if(theSpecies.speciesName == drinkBase)
+            if(theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
             {
                 return theSpecies;
             }
@@ -62,7 +59,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private string[] GenerateCustomerIngredients(int maxToppings)
     {
-        int toppingNum = Random.Range(0, maxToppings);
+        int toppingNum = Random.Range(1, maxToppings + 1);
 
         List<string> chosenToppings = new List<string>();
         string chosenBase = ChooseRandom(bases);
