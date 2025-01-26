@@ -12,10 +12,10 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] ScriptableObject[] species;
 
     [SerializeField] GameObject customerObject;
-    Image mainBody;
-    Image hair;
-    Image clothes;
-    Image other;
+    [SerializeField] Image mainBody;
+    [SerializeField] Image hair;
+    [SerializeField] Image clothes;
+    [SerializeField] Image other;
     [SerializeField] Sprite transparentSprite;
 
     void Start()
@@ -56,7 +56,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         foreach (Species theSpecies in species)
         {
-            if(theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
+            if (theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
             {
                 return theSpecies;
             }
@@ -105,7 +105,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (choices.Length == 0)
         {
-            Debug.LogError("There are no Sprite choices.");
+            print("There are no Sprite choices.");
             return transparentSprite;
         }
 
