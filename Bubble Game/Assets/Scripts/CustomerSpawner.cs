@@ -16,7 +16,7 @@ public class CustomerSpawner : MonoBehaviour
     Image hair;
     Image clothes;
     Image other;
-
+    [SerializeField] Sprite transparentSprite;
 
     void Start()
     {
@@ -106,7 +106,7 @@ public class CustomerSpawner : MonoBehaviour
         if (choices.Length == 0)
         {
             Debug.LogError("There are no Sprite choices.");
-            return null;
+            return transparentSprite;
         }
 
         Sprite chosenOption = choices[Random.Range(0, choices.Length)];

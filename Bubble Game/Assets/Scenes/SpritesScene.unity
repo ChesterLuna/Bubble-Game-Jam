@@ -2057,8 +2057,8 @@ MonoBehaviour:
   bases: []
   species:
   - {fileID: 11400000, guid: e7809e016a9a9794abc90ea5d4b36162, type: 2}
-  - {fileID: 11400000, guid: 8cd722fd378de6c43a6617d78a492bf1, type: 2}
   customerObject: {fileID: 908864895}
+  transparentSprite: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
 --- !u!4 &1342607072
 Transform:
   m_ObjectHideFlags: 0
