@@ -19,6 +19,7 @@ public class TimerController : MonoBehaviour
 
     private string ConvertToMinutes(float seconds)
     {
+        if(seconds < 0) return "0:00"
         int minutesLeft = Mathf.FloorToInt(seconds/60f);
         int secondsLeft = Mathf.FloorToInt(seconds - minutesLeft * 60f);
         string timerFormat = string.Format("{0:0}:{1:00}", minutesLeft, secondsLeft);
