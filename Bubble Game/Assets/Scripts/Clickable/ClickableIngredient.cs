@@ -34,4 +34,8 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
         }
     }
 
+    public void SwitchVisibility(GameObject gameObject)
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+    }
 }
