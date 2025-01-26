@@ -1,12 +1,17 @@
 using System;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class ScenesManager : MonoBehaviour
 {
-    public static SceneManager instance;
+    public static ScenesManager instance;
     public int currentDifficulty = 1;
     [SerializeField] private int currentDay = 1;
+    [SerializeField] TextMeshProUGUI dayText;
+    [SerializeField] Scene[] scenes;
+    
 
     private void Awake()
     {
@@ -19,6 +24,16 @@ public class SceneManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        SetDayText();
+    }
+
+    private void SetDayText()
+    {
+        dayText.text = "Day " + currentDay.ToString();
     }
 
     public void ChangeDay()
@@ -36,6 +51,8 @@ public class SceneManager : MonoBehaviour
 
 
         //Change Scene
+        currentDay++;
+        SceneManager.LoadScene(scenes[currentDay].name);
     }
 
     private void RaiseDifficulty()

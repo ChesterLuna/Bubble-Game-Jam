@@ -71,11 +71,11 @@ public class BobaCreator : MonoBehaviour
 
         if(levelManager.GetComponent<Timer>().timeLeft >= 0)
         {
-            levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(SceneManager.instance.currentDifficulty);
+            levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(ScenesManager.instance.currentDifficulty);
         }
         else
         {
-            SceneManager.instance.ChangeDay();
+            ScenesManager.instance.ChangeDay();
         }
     }
 
