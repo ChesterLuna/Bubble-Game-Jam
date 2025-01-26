@@ -20,12 +20,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
         face = customerObject.transform.Find("Feature (1)").GetComponent<Image>();
-        // string[]  ingredients = GenerateCustomer(4);
 
-        // foreach(var a in ingredients)
-        // {
-        //     print( a);
-        // }
         toppings = DrinkOptionHub.instance.toppings;
         bases = DrinkOptionHub.instance.bases;
     }

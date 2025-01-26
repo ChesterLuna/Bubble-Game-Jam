@@ -9,7 +9,6 @@ public class ScenesManager : MonoBehaviour
     public static ScenesManager instance;
     public int currentDifficulty = 1;
     [SerializeField] private int currentDay = 1;
-    [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] Scene[] scenes;
     
 
@@ -26,15 +25,15 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SetDayText();
-    }
+    // private void Start()
+    // {
+    //     SetDayText();
+    // }
 
-    private void SetDayText()
-    {
-        dayText.text = "Day " + currentDay.ToString();
-    }
+    // private void SetDayText()
+    // {
+    //     dayText.text = "Day " + currentDay.ToString();
+    // }
 
     public void ChangeDay()
     {
