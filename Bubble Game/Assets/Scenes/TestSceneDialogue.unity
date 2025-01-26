@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 804290684}
         m_TargetAssemblyTypeName: DrinkOptionHub, Assembly-CSharp
-        m_MethodName: OpenGuidebook
+        m_MethodName: ToggleGuidebook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guidebookPrefab: {fileID: 7270251727814775632, guid: 5d84b339d5e000a44a05d60fc36fd376, type: 3}
-  guidebookParent: {fileID: 1390231442}
+  guidebookParent: {fileID: 1390231446}
 --- !u!1 &1035493720
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open guidebook
+  m_text: Guidebook
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -35,11 +35,12 @@ public class DrinkOptionHub : MonoBehaviour {
     public void Start() {
     }
 
-    public void OpenGuidebook() {
-        guidebookInstance = Instantiate(guidebookPrefab, guidebookParent);
+    public void ToggleGuidebook() {
+        if (guidebookInstance == null) {
+            guidebookInstance = Instantiate(guidebookPrefab, guidebookParent);
+        } else {
+            Destroy(guidebookInstance);
+        }
     }
 
-    public void CloseGuidebook() {
-        Destroy(guidebookInstance);
-    }
 }

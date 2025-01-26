@@ -43,7 +43,7 @@ public class CustomerSpawner : MonoBehaviour
         face.sprite = speciesFace;
 
         // Gives liked ingredients to the customer object
-        //customerObject.GetComponent<Customer>().ingredients = ingredients;
+        customerObject.GetComponent<Customer>().ingredients = ingredients;
         return ingredients;
     }
 
