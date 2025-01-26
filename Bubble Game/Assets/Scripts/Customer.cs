@@ -23,6 +23,10 @@ public class Customer : MonoBehaviour
             ScoringSystem.instance.dailyScore++;
             ScoringSystem.instance.globalScore += correctIngredients;
         }
-        
+        else
+        {
+            ScoringSystem.instance.dailyScore--;
+        }
+
     }
 }

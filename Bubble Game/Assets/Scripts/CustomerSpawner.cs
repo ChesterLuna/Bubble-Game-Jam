@@ -43,7 +43,7 @@ public class CustomerSpawner : MonoBehaviour
         face.sprite = speciesFace;
 
         // Gives liked ingredients to the customer object
-        customerObject.GetComponent<Customer>().ingredients = ingredients;
+        customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
         return ingredients;
     }
 
@@ -62,7 +62,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private string[] GenerateCustomerIngredients(int maxToppings)
     {
-        int toppingNum = Random.Range(0, maxToppings);
+        int toppingNum = Random.Range(1, maxToppings + 1);
 
         List<string> chosenToppings = new List<string>();
         string chosenBase = ChooseRandom(bases);
