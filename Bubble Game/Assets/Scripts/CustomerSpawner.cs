@@ -13,13 +13,17 @@ public class CustomerSpawner : MonoBehaviour
 
     [SerializeField] GameObject customerObject;
     Image mainBody;
-    Image face;
+    Image hair;
+    Image clothes;
+    Image other;
 
 
     void Start()
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
-        face = customerObject.transform.Find("Feature (1)").GetComponent<Image>();
+        hair = customerObject.transform.Find("Hair").GetComponent<Image>();
+        clothes = customerObject.transform.Find("Clothes").GetComponent<Image>();
+        other = customerObject.transform.Find("Other").GetComponent<Image>();
 
         toppings = DrinkOptionHub.instance.toppings;
         bases = DrinkOptionHub.instance.bases;
@@ -36,8 +40,12 @@ public class CustomerSpawner : MonoBehaviour
         mainBody.sprite = speciesBody;
 
         // Generate Features
-        Sprite speciesFace = ChooseRandom(currentSpecies.faceFeatures);
-        face.sprite = speciesFace;
+        Sprite hairFeature = ChooseRandom(currentSpecies.hairFeatures);
+        hair.sprite = hairFeature;
+        Sprite clothesFeature = ChooseRandom(currentSpecies.clothesFeatures);
+        clothes.sprite = clothesFeature;
+        Sprite otherFeature = ChooseRandom(currentSpecies.otherFeatures);
+        other.sprite = otherFeature;
 
         // Gives liked ingredients to the customer object
         customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
