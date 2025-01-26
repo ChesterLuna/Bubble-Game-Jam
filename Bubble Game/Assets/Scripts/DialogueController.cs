@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ public class DialogueController : MonoBehaviour {
         textComponent.text = "";
 
         // Testing purposes, remove later
-        /*QueuePreferences("fruit", new string[] {
+        QueuePreferences("fruit", new string[] {
             "boba",
             "flecks",
             "sugar",
@@ -26,7 +27,7 @@ public class DialogueController : MonoBehaviour {
             "jelly",
             "beans"
         });
-        Debug.Log(dialogueQueue.Count);*/
+        Debug.Log(dialogueQueue.Count);
     }
 
     private void Update() {

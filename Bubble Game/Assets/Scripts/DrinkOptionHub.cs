@@ -131,7 +131,7 @@ public class DrinkOptionHub : MonoBehaviour {
         }
     }
 
-    public void Start() {
+    public void OnEnable() {
 
         // Populate dictionaries
         for (int i = 0; i < toppings.Length; i++)
