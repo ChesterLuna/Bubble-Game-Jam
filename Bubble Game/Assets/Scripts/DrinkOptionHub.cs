@@ -1,5 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using static Unity.Collections.AllocatorManager;
+using static UnityEngine.Rendering.DebugUI;
+using Unity.VisualScripting;
+using UnityEngine.XR;
 
 public class DrinkOptionHub : MonoBehaviour {
     public static DrinkOptionHub instance; // singleton instance
@@ -61,12 +65,18 @@ public class DrinkOptionHub : MonoBehaviour {
         { "black", "demon"}
     };
 
-
-    public Dictionary<string, string[]> dialogues = new Dictionary<string, string[]> {
-        { "option1", new string[] {
-            "I want option1",
-            "me want option1",
-            "option1 please"} }
+    // dialogue options
+    public string[] dialogues = new string[] {
+        "Something that is _ please!",
+        "Today I think I'm in the mood for something _.",
+        "Perhaps a drink that is _ would be best.",
+        "Hmmm, _ sounds good I think...?",
+        "I would quite like a tea that is _.",
+        "I heard that a drink that is _ is quite good?",
+        "Could I please have a tea that is _.",
+        "The only thing that would get me going today is something that is _!",
+        "Uh... _ please...",
+        "I demand a drink that is _, quick quick!"
     };
 
     private void Awake() { // making things singleton
