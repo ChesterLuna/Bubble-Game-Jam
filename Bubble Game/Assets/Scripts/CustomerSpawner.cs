@@ -26,6 +26,8 @@ public class CustomerSpawner : MonoBehaviour
         // {
         //     print( a);
         // }
+        toppings = DrinkOptionHub.instance.toppings;
+        bases = DrinkOptionHub.instance.bases;
     }
 
     public string[] SpawnCustomer(int maxToppings)
@@ -51,7 +53,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         foreach (Species theSpecies in species)
         {
-            if(theSpecies.speciesName == drinkBase)
+            if(theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
             {
                 return theSpecies;
             }
