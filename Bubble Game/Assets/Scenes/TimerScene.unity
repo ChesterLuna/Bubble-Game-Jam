@@ -1294,6 +1294,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c550abe46e09a46b808da637d5722b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toppings:
+  - boba
+  - flecks
+  - sugar
+  - truffle
+  - kumquat
+  - ambrosia
+  - clouds
+  - tears
+  - jelly
+  - beans
+  properties:
+  - chewy
+  - luxe
+  - saccharine
+  - earthy
+  - citrusy
+  - refreshing
+  - fluffy
+  - intense
+  - novel
+  - calming
+  bases:
+  - fruit
+  - green
+  - milk
+  - oolong
+  - black
 --- !u!4 &892486211
 Transform:
   m_ObjectHideFlags: 0
@@ -1589,13 +1617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e64488247d47c44882fd8b49a5de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toppings:
-  - a
-  - b
-  - c
-  bases:
-  - jerma
-  - blue
+  toppings: []
+  bases: []
   species:
   - {fileID: 11400000, guid: e7809e016a9a9794abc90ea5d4b36162, type: 2}
   - {fileID: 11400000, guid: 8cd722fd378de6c43a6617d78a492bf1, type: 2}
