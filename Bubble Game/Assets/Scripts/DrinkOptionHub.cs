@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class DrinkOptionHub : MonoBehaviour {
     public static DrinkOptionHub instance; // singleton instance
+    [SerializeField] private GameObject guidebookPrefab;
+    [SerializeField] private Transform guidebookParent;
+    private GameObject guidebookInstance;
 
     //-- Information hub
     public Dictionary<string, string> speciesPreferences = new Dictionary<string, string> {
@@ -30,5 +33,13 @@ public class DrinkOptionHub : MonoBehaviour {
     }
 
     public void Start() {
+    }
+
+    public void OpenGuidebook() {
+        guidebookInstance = Instantiate(guidebookPrefab, guidebookParent);
+    }
+
+    public void CloseGuidebook() {
+        Destroy(guidebookInstance);
     }
 }
