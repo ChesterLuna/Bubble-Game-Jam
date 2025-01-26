@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueController : MonoBehaviour {
     private string dialogueContent = "";
     private TextMeshProUGUI textComponent = null;
+    private Queue<string> dialogueQueue = new Queue<string>();
 
     private void Start() {
         textComponent = GetComponent<TextMeshProUGUI>();
@@ -13,6 +14,7 @@ public class DialogueController : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             DisplayPreference("customer", "option1");
         }
+        Debug.Log(dialogueQueue.Count);
     }
 
     private void DisplayText(string text) { // displays the text
@@ -23,6 +25,6 @@ public class DialogueController : MonoBehaviour {
     public void DisplayPreference(string name, string preference) { // generates one dialogue and displays it
         string[] options = DrinkOptionHub.instance.dialogues;
         string dial = options[Random.Range(0, options.Length)].Replace("_", "<color=#0088AA>" + preference + "</color>");
-        DisplayText("<color=#11AA00>" + name + "</color>: " + dial);
+        dialogueQueue.Enqueue("<color=#11AA00>" + name + "</color>: " + dial);
     }
 }

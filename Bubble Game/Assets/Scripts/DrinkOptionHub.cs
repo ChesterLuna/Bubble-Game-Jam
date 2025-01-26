@@ -66,7 +66,7 @@ public class DrinkOptionHub : MonoBehaviour {
     };
 
     // dialogue options
-    public string[] dialogues = new string[] {
+    public string[] dialogues = new string[] { // the _ will be replaced by the preference name
         "Something that is _ please!",
         "Today I think I'm in the mood for something _.",
         "Perhaps a drink that is _ would be best.",
