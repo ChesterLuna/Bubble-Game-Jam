@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd73bf010a62dfa4bbb79924427a5e6a
+guid: a699380f34bd6ab40b5d56920de78ed4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8249749711278076548
-    second: tumblr_ba8839ee2470852e8bd37ef89a217105_de9aa498_540_0
+      213: -7056632537498434606
+    second: black tea cup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tumblr_ba8839ee2470852e8bd37ef89a217105_de9aa498_540_0
+      name: black tea cup_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 36
-        width: 430
-        height: 568
+        x: 188
+        y: 15
+        width: 54
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4827c9247affc7270800000000000000
-      internalID: 8249749711278076548
+      spriteID: 2d341f3481ec11e90800000000000000
+      internalID: -7056632537498434606
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tumblr_ba8839ee2470852e8bd37ef89a217105_de9aa498_540_0: 8249749711278076548
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
