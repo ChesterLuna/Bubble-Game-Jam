@@ -14,11 +14,14 @@ public class BobaCreator : MonoBehaviour
     [SerializeField] GameObject toppingPrefab;
     [SerializeField] Customer customer;
 
+    [SerializeField] GameObject levelManager;
+
     private void Start()
     {
         currentBase = "";
         currentBaseImage = transform.Find("Base").GetComponent<Image>();
         toppings = transform.Find("Toppings").gameObject;
+        levelManager = GameObject.FindGameObjectWithTag("GameController");
     }
 
     public void AddBase(string newBase, Sprite newBaseImage)
@@ -65,6 +68,15 @@ public class BobaCreator : MonoBehaviour
         currentToppings.Add(currentBase);
         customer.CheckCorrectIngredients(currentToppings.ToArray());
         DeleteBoba();
+
+        if(levelManager.GetComponent<Timer>().timeLeft >= 0)
+        {
+            levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(SceneManager.instance.currentDifficulty);
+        }
+        else
+        {
+            SceneManager.instance.ChangeDay();
+        }
     }
 
 
