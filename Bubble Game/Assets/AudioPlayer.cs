@@ -5,7 +5,7 @@ public class AudioPlayer : MonoBehaviour
 {
     [SerializeField] public AudioSource source;
     [SerializeField] public AudioClip[] musicOrder;
-    [SerializeField] public int musicCounter = 0;
+    [SerializeField] private int musicCounter = 0;
     [SerializeField] private bool playNextMusic = false;
     [SerializeField] private float fadeDuration = 0.5f;
 
@@ -21,11 +21,15 @@ public class AudioPlayer : MonoBehaviour
     {
         if (playNextMusic)
         {
-            print("here");
             playNextMusic = false;
-            StartCoroutine(FadeOut(source, fadeDuration));
+            CrossFadeAudios();
         }
 
+    }
+
+    public void CrossFadeAudios()
+    {
+        StartCoroutine(FadeOut(source, fadeDuration));
     }
 
     public void PlayNextClip()
@@ -36,7 +40,7 @@ public class AudioPlayer : MonoBehaviour
     }
 
     // From https://discussions.unity.com/t/fade-out-audio-source/585912/6
-    public IEnumerator FadeOut(AudioSource audioSource, float duration)
+    private IEnumerator FadeOut(AudioSource audioSource, float duration)
     {
         float startVolume = audioSource.volume;
 
@@ -52,7 +56,7 @@ public class AudioPlayer : MonoBehaviour
         StartCoroutine(FadeIn(audioSource, duration));
     }
 
-    public IEnumerator FadeIn(AudioSource audioSource, float duration)
+    private IEnumerator FadeIn(AudioSource audioSource, float duration)
     {
         float startVolume = audioSource.volume;
 
