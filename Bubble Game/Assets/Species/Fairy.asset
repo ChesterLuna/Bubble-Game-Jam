@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff3cbf9b58b6a3e408b554766a91417f, type: 3}
-  m_Name: Elf
+  m_Name: Fairy
   m_EditorClassIdentifier: 
-  speciesName: elf
+  speciesName: fairy
   mainBody:
   - {fileID: 21300000, guid: 8c702eb348f9f1142b981824f80dffef, type: 3}
   - {fileID: 21300000, guid: dfe00bfbf98a47e4996f21afdaef9c1a, type: 3}
@@ -25,4 +25,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ca319b6649d721449eb2c8b0b5b8498, type: 3}
   - {fileID: 21300000, guid: 4e30e8f2f90660041b1d7993d4edb6f8, type: 3}
   - {fileID: 21300000, guid: 7cb1a705b3daa354da8ee577977c5c63, type: 3}
-  otherFeatures: []
+  otherFeatures:
+  - {fileID: 21300000, guid: faa8d16d37156854c933ed333d5b3b32, type: 3}

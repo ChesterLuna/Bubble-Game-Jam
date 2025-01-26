@@ -36,7 +36,7 @@ public class CustomerSpawner : MonoBehaviour
         Species currentSpecies = GetSpecies(drinkBase);
 
         // Generate Race
-        Sprite speciesBody = currentSpecies.mainBody;
+        Sprite speciesBody = ChooseRandom(currentSpecies.mainBody);
         mainBody.sprite = speciesBody;
 
         // Generate Features
