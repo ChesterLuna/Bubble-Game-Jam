@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class DrinkOptionHub : MonoBehaviour {
     public static DrinkOptionHub instance; // singleton instance
+    [SerializeField] private GameObject guidebookPrefab;
+    [SerializeField] private Transform guidebookParent;
+    private GameObject guidebookInstance;
 
     //-- Information hub
 
@@ -87,4 +90,13 @@ public class DrinkOptionHub : MonoBehaviour {
             propertiesToToppings.Add(properties[i], toppings[i]);
         }
     }
+
+    public void ToggleGuidebook() {
+        if (guidebookInstance == null) {
+            guidebookInstance = Instantiate(guidebookPrefab, guidebookParent);
+        } else {
+            Destroy(guidebookInstance);
+        }
+    }
+
 }
