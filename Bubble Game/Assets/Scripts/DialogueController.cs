@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
 
 public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
@@ -13,10 +14,19 @@ public class DialogueController : MonoBehaviour {
         textComponent.text = "";
 
         // Testing purposes, remove later
-        for (int i = 0; i < 5; i++) {
-            DisplayPreference("customer", "option1");
-        }
-        Debug.Log(dialogueQueue.Count);
+        /*QueuePreferences("fruit", new string[] {
+            "boba",
+            "flecks",
+            "sugar",
+            "truffle",
+            "kumquat",
+            "ambrosia",
+            "clouds",
+            "tears",
+            "jelly",
+            "beans"
+        });
+        Debug.Log(dialogueQueue.Count);*/
     }
 
     private void Update() {
@@ -32,10 +42,28 @@ public class DialogueController : MonoBehaviour {
         textComponent.text += "\n" + text;
     }
 
-    public void DisplayPreference(string name, string preference) { // generates one dialogue and displays it
-        string[] options = DrinkOptionHub.instance.dialogues;
-        string dial = options[Random.Range(0, options.Length)].Replace("_", "<color=#0088AA>" + preference + "</color>");
-        dialogueQueue.Enqueue("<color=#11AA00>" + name + "</color>: " + dial);
-    }
+    public void QueuePreferences(string teaBase, string[] toppings) {
+        string name = "<color=#11AA00>" + DrinkOptionHub.instance.drinksToSpecies[teaBase] + "</color>: ";
+        string[] options;
+        string[] fillers = DrinkOptionHub.instance.fillers;
 
+        dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // add a filler at the start
+
+        for (int i = 0; i < toppings.Length; i++) {
+            if (i == 0) {
+                options = DrinkOptionHub.instance.firstPreference;
+            } else {
+                options = DrinkOptionHub.instance.laterPreferences;
+            }
+
+            if (Random.Range(0, 10) == 0) {
+                dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // randomly add filler
+            }
+
+            string dial = options[Random.Range(0, options.Length)].Replace("_", "<color=#0088AA>" + DrinkOptionHub.instance.toppingsToProperties[toppings[i]] + "</color>");
+            dialogueQueue.Enqueue(name + dial);
+        }
+
+
+    }
 }
