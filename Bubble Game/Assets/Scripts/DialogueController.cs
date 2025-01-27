@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
-    private Queue<string> dialogueQueue = new Queue<string>();
+    [SerializeField] private Queue<string> dialogueQueue = new Queue<string>();
     [SerializeField] private GameObject nextButton;
 
     private void Start() {
@@ -29,11 +28,11 @@ public class DialogueController : MonoBehaviour {
     }
 
     public void QueuePreferences(string teaBase, string[] toppings) {
-        string name = "<color=#11AA00>" + DrinkOptionHub.instance.drinksToSpecies[teaBase] + "</color>: ";
+        string creatureName = DrinkOptionHub.instance.drinksToSpecies[teaBase];
+        creatureName = creatureName[0].ToString().ToUpper() + creatureName.Substring(1);
+        string name = "<color=#11AA00>" + creatureName + "</color>: ";
         string[] options;
         string[] fillers = DrinkOptionHub.instance.fillers;
-
-        dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // add a filler at the start
 
         for (int i = 1; i < toppings.Length; i++) {
             if (i == 0) {
@@ -46,10 +45,25 @@ public class DialogueController : MonoBehaviour {
                 dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // randomly add filler
             }
 
-            string dial = options[Random.Range(0, options.Length)].Replace("_", "<color=#0088AA>" + DrinkOptionHub.instance.toppingsToProperties[toppings[i]] + "</color>");
+            string chosenDialogue = options[Random.Range(0, options.Length)];
+
+            string dial = ReplacePreference(chosenDialogue, toppings[i]);
             dialogueQueue.Enqueue(name + dial);
         }
 
+    }
+
+
+    private string ReplacePreference(string dialogue, string topping)
+    {
+        string preference = DrinkOptionHub.instance.toppingsToProperties[topping];
+        return dialogue.Replace("_", "<color=#0088AA>" + preference + "</color>");
+    }
+
+    public void ClearDialogue()
+    {
+        dialogueQueue.Clear();
+        textComponent.text = "";
 
     }
 }
