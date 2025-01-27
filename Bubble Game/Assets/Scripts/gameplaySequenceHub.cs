@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameplaySequenceHub : MonoBehaviour {
     public static GameplaySequenceHub instance;
-    public string playerName = "<color=#8800AA>You</color>";
+    public string playerName = "<color=#8800AA>You: </color>";
 
     public Dictionary<int, string[]> dayScene = new Dictionary<int, string[]> {
         {1, new string[] {
