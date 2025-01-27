@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
+// using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
 
 public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
