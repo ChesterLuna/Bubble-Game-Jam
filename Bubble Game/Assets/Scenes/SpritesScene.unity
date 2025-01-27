@@ -1001,6 +1001,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8366828703146690917, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
   m_PrefabInstance: {fileID: 351350362}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &364910870 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2261645664186062727, guid: 8e1e1bed35d5c22468df9d170469ce7e, type: 3}
+  m_PrefabInstance: {fileID: 2814495653789502126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369163231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1393,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &485426885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 593630012357686484, guid: 5ff27e67f446ae0448de507aeb3e1bc4, type: 3}
+  m_PrefabInstance: {fileID: 891521721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3590,7 @@ MonoBehaviour:
   clothes: {fileID: 0}
   other: {fileID: 0}
   transparentSprite: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
+  dialogue: {fileID: 485426885}
 --- !u!4 &1342607072
 Transform:
   m_ObjectHideFlags: 0

@@ -13,21 +13,6 @@ public class DialogueController : MonoBehaviour {
     private void Start() {
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = "";
-
-        // Testing purposes, remove later
-        QueuePreferences("fruit", new string[] {
-            "boba",
-            "flecks",
-            "sugar",
-            "truffle",
-            "kumquat",
-            "ambrosia",
-            "clouds",
-            "tears",
-            "jelly",
-            "beans"
-        });
-        Debug.Log(dialogueQueue.Count);
     }
 
     private void Update() {
@@ -50,7 +35,7 @@ public class DialogueController : MonoBehaviour {
 
         dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // add a filler at the start
 
-        for (int i = 0; i < toppings.Length; i++) {
+        for (int i = 1; i < toppings.Length; i++) {
             if (i == 0) {
                 options = DrinkOptionHub.instance.firstPreference;
             } else {
