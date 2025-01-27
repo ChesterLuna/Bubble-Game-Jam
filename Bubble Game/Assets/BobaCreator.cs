@@ -15,6 +15,7 @@ public class BobaCreator : MonoBehaviour
     [SerializeField] Customer customer;
 
     [SerializeField] GameObject levelManager;
+    [SerializeField] Sprite transparentSprite;
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class BobaCreator : MonoBehaviour
         currentToppings.Clear();
         currentBase = "";
 
-        currentBaseImage.sprite = null;
+        currentBaseImage.sprite = transparentSprite;
         
         // Destroy all children
         int childrenCount = toppings.transform.childCount;

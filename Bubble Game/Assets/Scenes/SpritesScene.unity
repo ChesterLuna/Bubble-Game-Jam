@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: jelly
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a001a20405bf2a44a4a8031e71e99c0, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: jelly
@@ -586,6 +590,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: flecks
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91a6fcf201e73db44aba663220a9c796, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: flecks
@@ -736,6 +744,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: kumquat
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acc7bbd4c9dd00645b2d3500bff19466, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: kumquat
@@ -1107,6 +1119,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396274679}
   m_CullTransparentMesh: 1
+--- !u!224 &406126938 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2261645664186062727, guid: 8e1e1bed35d5c22468df9d170469ce7e, type: 3}
+  m_PrefabInstance: {fileID: 2814495653789502126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &422458648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1380,7 @@ RectTransform:
   - {fileID: 787429108}
   - {fileID: 647098469}
   - {fileID: 351350363}
+  - {fileID: 406126938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1719,6 +1737,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: milk
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5eca3e65fd0e2cf4591b0b0bdf41ab95, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: milk
@@ -2370,6 +2392,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: tears
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a1c454f07175c143a53f92bb5ff69c6, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: tears
@@ -2520,6 +2546,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: truffle
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 67eb48ef7d6eaef4eaabe80c5a77454f, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: truffle
@@ -2561,6 +2591,10 @@ PrefabInstance:
     - target: {fileID: 2099104576170950022, guid: 5ff27e67f446ae0448de507aeb3e1bc4, type: 3}
       propertyPath: m_Name
       value: DialogueSection
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099104576170950022, guid: 5ff27e67f446ae0448de507aeb3e1bc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2423054761938088989, guid: 5ff27e67f446ae0448de507aeb3e1bc4, type: 3}
       propertyPath: m_fontSize
@@ -3288,6 +3322,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: beans
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3223fd05dc7258843bd8247c24a7aaa7, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: beans
@@ -4199,6 +4237,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: clouds
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a9212daf289efa4f8fe7aaac0cf3afa, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: clouds
@@ -4430,6 +4472,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: boba
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 48a10e46abc1d5041b883ce5a41f1f57, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: boba
@@ -4580,6 +4626,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: ambrosia
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 810740e60686cef4291d541f0ae7f9ad, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: ambrosia
@@ -4805,6 +4855,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: sugar
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eefdcc06a0fc8244a9ed7da294e82e6e, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: sugar
@@ -5030,6 +5084,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: oolong
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 870a96aa7f842a44390653df636a899c, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: oolong
@@ -5180,6 +5238,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: green
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 306a0f1a56d8bdf409607436bd313b2c, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: green
@@ -5410,6 +5472,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: fruit
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9325a9366958ac4aa78871988f2cc2c, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: fruit
@@ -5560,6 +5626,10 @@ PrefabInstance:
       propertyPath: ingredientName
       value: black
       objectReference: {fileID: 0}
+    - target: {fileID: 8547779404621192784, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
+      propertyPath: ingredientSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a699380f34bd6ab40b5d56920de78ed4, type: 3}
     - target: {fileID: 9177675643054172929, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
       propertyPath: m_Name
       value: black
@@ -5934,6 +6004,38 @@ PrefabInstance:
       propertyPath: customer
       value: 
       objectReference: {fileID: 908864896}
+    - target: {fileID: 2716444127280549885, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: transparentSprite
+      value: 
+      objectReference: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
+    - target: {fileID: 3616136366995158333, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616136366995158333, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616136366995158333, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616136366995158333, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140295117899267779, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140295117899267779, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140295117899267779, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4799105273138470939, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6021,6 +6123,34 @@ PrefabInstance:
     - target: {fileID: 5628308516361369976, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
       propertyPath: m_TagString
       value: BobaCreator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547149141879511525, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1231
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547149141879511525, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547149141879511525, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547149141879511525, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604052657801254978, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
+    - target: {fileID: 8604052657801254978, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604052657801254978, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
