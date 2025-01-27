@@ -17,6 +17,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] Image clothes;
     [SerializeField] Image other;
     [SerializeField] Sprite transparentSprite;
+    [SerializeField] GameObject dialogue;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class CustomerSpawner : MonoBehaviour
 
         // Gives liked ingredients to the customer object
         customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
+        dialogue.GetComponent<DialogueController>().QueuePreferences(drinkBase, ingredients);
         return ingredients;
     }
 
