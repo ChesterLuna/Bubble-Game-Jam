@@ -41,14 +41,15 @@ public class DialogueController : MonoBehaviour {
                 options = DrinkOptionHub.instance.laterPreferences;
             }
 
-            if (Random.Range(0, 10) == 0) {
-                dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // randomly add filler
-            }
 
             string chosenDialogue = options[Random.Range(0, options.Length)];
 
             string dial = ReplacePreference(chosenDialogue, toppings[i]);
             dialogueQueue.Enqueue(name + dial);
+            if (Random.Range(0, 10) == 0)
+            {
+                dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // randomly add filler
+            }
         }
 
     }
