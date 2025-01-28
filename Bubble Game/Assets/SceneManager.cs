@@ -54,6 +54,11 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(scenes[currentDay].name);
     }
 
+    public void LoadNextScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     private void RaiseDifficulty()
     {
         currentDifficulty++;
