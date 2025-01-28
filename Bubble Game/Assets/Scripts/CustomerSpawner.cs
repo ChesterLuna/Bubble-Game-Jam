@@ -41,6 +41,10 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] Sprite transparentSprite;
     [SerializeField] GameObject dialogue;
 
+    public GameObject player;
+    public AudioClip bells;
+    [SerializeField][Range(0f, 1f)] float vol = 1;
+
     void Start()
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
@@ -75,6 +79,11 @@ public class CustomerSpawner : MonoBehaviour
         // Gives liked ingredients to the customer object
         customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
         dialogue.GetComponent<DialogueController>().QueuePreferences(drinkBase, ingredients);
+        GameObject source = Instantiate(player);
+        source.GetComponent<AudioSource>().clip = bells;
+        source.GetComponent<AudioSource>().volume = vol;
+        source.GetComponent<AudioSource>().Play();
+
         return ingredients;
     }
 

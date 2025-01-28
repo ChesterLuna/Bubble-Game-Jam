@@ -353,3 +353,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   favoriteIngredients: []
+  player: {fileID: 3737242601552997965, guid: 4738328d7dad07e49a9434039aa6e019, type: 3}
+  success: {fileID: 8300000, guid: 9b7004112ae2afd46b946b6fe8ce2c5d, type: 3}
+  fail: {fileID: 8300000, guid: c13c408f38c2441498597dda01d217b6, type: 3}

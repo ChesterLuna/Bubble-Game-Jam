@@ -75,6 +75,9 @@ MonoBehaviour:
   other: {fileID: 0}
   transparentSprite: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
   dialogue: {fileID: 0}
+  player: {fileID: 3737242601552997965, guid: 4738328d7dad07e49a9434039aa6e019, type: 3}
+  bells: {fileID: 8300000, guid: 09a9bd866c23047479d80637621fa2f9, type: 3}
+  vol: 1
 --- !u!114 &493604974734270532
 MonoBehaviour:
   m_ObjectHideFlags: 0

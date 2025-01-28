@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class Customer : MonoBehaviour
 {
     public string[] favoriteIngredients;
+    public GameObject player;
+    public AudioClip success;
+    public AudioClip fail;
+    [SerializeField][Range(0f, 1f)] float vol = 1;
 
     public void CheckCorrectIngredients(string[] chosenIngredients)
     {
@@ -21,11 +25,19 @@ public class Customer : MonoBehaviour
         // Global score counts how many ingredients were correct in perfect orders
         if(correctIngredients == favoriteIngredients.Length)
         {
+            GameObject thePlayer = Instantiate(player);
+            thePlayer.GetComponent<AudioSource>().clip = success;
+            thePlayer.GetComponent<AudioSource>().volume = vol;
+
             ScoringSystem.instance.dailyScore++;
             ScoringSystem.instance.globalScore += correctIngredients;
         }
         else
         {
+            GameObject thePlayer = Instantiate(player);
+            thePlayer.GetComponent<AudioSource>().clip = fail;
+            thePlayer.GetComponent<AudioSource>().volume = vol;
+
             ScoringSystem.instance.dailyScore--;
         }
 

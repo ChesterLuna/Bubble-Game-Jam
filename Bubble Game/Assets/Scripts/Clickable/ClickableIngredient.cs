@@ -15,6 +15,7 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
     [SerializeField] Sprite singleIngredientSprite;
     [SerializeField] AudioClip audioToplay;
     [SerializeField] GameObject clipPlayer;
+    [SerializeField][Range(0f, 1f)] float vol = 1;
 
     GameObject bobaCreator;
 
@@ -27,15 +28,19 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
 
     public void OnClick()
     {
-        if(isBase)
+        bool value = true;
+        if (isBase)
         {
-            bobaCreator.GetComponent<BobaCreator>().AddBase(ingredientName, ingredientSprite);
+            value = bobaCreator.GetComponent<BobaCreator>().AddBase(ingredientName, ingredientSprite);
         }
         else
         {
-            bobaCreator.GetComponent<BobaCreator>().AddTopping(ingredientName, ingredientSprite);
+            value = bobaCreator.GetComponent<BobaCreator>().AddTopping(ingredientName, ingredientSprite);
         }
-        PlayClip();
+        if(value)
+        {
+            PlayClip();
+        }
 
     }
 
@@ -48,6 +53,7 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
         }
         GameObject source = Instantiate(clipPlayer);
         source.GetComponent<AudioSource>().clip = audioToplay;
+        source.GetComponent<AudioSource>().volume = vol;
         source.GetComponent<AudioSource>().Play();
     }
 

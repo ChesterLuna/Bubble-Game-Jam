@@ -378,6 +378,14 @@ PrefabInstance:
       value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: bells
+      value: 
+      objectReference: {fileID: 8300000, guid: 09a9bd866c23047479d80637621fa2f9, type: 3}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3737242601552997965, guid: 4738328d7dad07e49a9434039aa6e019, type: 3}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 485426885}

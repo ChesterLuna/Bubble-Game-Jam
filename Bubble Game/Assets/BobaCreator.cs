@@ -28,27 +28,29 @@ public class BobaCreator : MonoBehaviour
         levelManager = GameObject.FindGameObjectWithTag("GameController");
     }
 
-    public void AddBase(string newBase, Sprite newBaseImage)
+    public bool AddBase(string newBase, Sprite newBaseImage)
     {
         if(currentBase != "")
         {
-            return;
+            return false;
         }
         currentBase = newBase;
         currentBaseImage.sprite = newBaseImage;
+        return true;
     }
 
-    public void AddTopping(string newTopping, Sprite newToppingImage)
+    public bool AddTopping(string newTopping, Sprite newToppingImage)
     {
         if (currentToppings.Contains(newTopping))
         {
-            return;
+            return false;
         }
         currentToppings.Add(newTopping);
 
         GameObject newToppingObject = Instantiate(toppingPrefab, toppings.transform);
 
         newToppingObject.GetComponent<Image>().sprite = newToppingImage;
+        return true;
 
     }
 
