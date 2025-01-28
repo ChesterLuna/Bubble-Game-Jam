@@ -45,8 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e64488247d47c44882fd8b49a5de10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toppings: []
-  bases: []
+  toppings:
+  - boba
+  - flecks
+  - sugar
+  - truffle
+  - kumquat
+  - ambrosia
+  - clouds
+  - tears
+  - jelly
+  - beans
+  bases:
+  - fruit
+  - green
+  - milk
+  - oolong
+  - black
   species:
   - {fileID: 11400000, guid: 447698855e58d18478a70979672f7ca1, type: 2}
   - {fileID: 11400000, guid: e686678c0a06304488007ae7b9dad9a2, type: 2}

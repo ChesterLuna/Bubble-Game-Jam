@@ -5,7 +5,7 @@ using UnityEngine.UI;
 // using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
 
 public class DialogueController : MonoBehaviour {
-    private TextMeshProUGUI textComponent = null;
+    [SerializeField] private TextMeshProUGUI textComponent = null;
     [SerializeField] private Queue<string> dialogueQueue = new Queue<string>();
     [SerializeField] private GameObject nextButton;
     
@@ -18,9 +18,16 @@ public class DialogueController : MonoBehaviour {
     [SerializeField] private List<int> soundToplay;
     private int outroCounter;
 
-    private void Start() {
+    private void Awake() {
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = "";
+        levelManager = GameObject.FindGameObjectWithTag("GameController");
+
+    }
+
+    private void Start() {
+        textComponent = GetComponent<TextMeshProUGUI>();
+        // textComponent.text = "";
         levelManager = GameObject.FindGameObjectWithTag("GameController");
 
     }

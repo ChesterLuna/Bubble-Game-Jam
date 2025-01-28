@@ -6,8 +6,30 @@ using UnityEngine.UI;
 
 public class CustomerSpawner : MonoBehaviour
 {
-    [SerializeField] string[] toppings;
-    [SerializeField] string[] bases;
+    [SerializeField] string[] toppings = new string[] {
+        "boba",
+        "flecks",
+        "sugar",
+        "truffle",
+        "kumquat",
+        "ambrosia",
+        "clouds",
+        "tears",
+        "jelly",
+        "beans"
+    };
+    [SerializeField] string[] bases = new string[] {
+        "chewy",
+        "luxe",
+        "saccharine",
+        "earthy",
+        "citrusy",
+        "refreshing",
+        "fluffy",
+        "intense",
+        "novel",
+        "calming"
+    };
 
     [SerializeField] ScriptableObject[] species;
 
@@ -26,8 +48,6 @@ public class CustomerSpawner : MonoBehaviour
         clothes = customerObject.transform.Find("Clothes").GetComponent<Image>();
         other = customerObject.transform.Find("Other").GetComponent<Image>();
 
-        toppings = DrinkOptionHub.instance.toppings;
-        bases = DrinkOptionHub.instance.bases;
 
         dialogue.GetComponent<DialogueController>().QueueSequenceDialogue(ScenesManager.instance.currentDay);
 
