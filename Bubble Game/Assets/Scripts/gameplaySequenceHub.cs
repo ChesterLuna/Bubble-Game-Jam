@@ -167,6 +167,14 @@ public class GameplaySequenceHub : MonoBehaviour {
             "<color=#11AA00>Demon</color>: I hope you can improve your efforts... otherwise, it may not just be your little tavern that meets its demise...",
             "<color=#8800AA>You: </color>... Sounds like I have no choice but to succeed."
             }
+        },
+        {"7S", new string[] {
+            "<color=#8800AA>You: </color>I... I DID IT! I EARNED 100 GOLD!",
+            }
+        },
+        {"7F", new string[] {
+            "<color=#8800AA>You: </color>I... I DID IT! I EARNED 100 GOLD!",
+            }
         }
     };
 

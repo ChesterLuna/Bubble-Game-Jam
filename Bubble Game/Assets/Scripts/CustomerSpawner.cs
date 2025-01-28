@@ -6,8 +6,30 @@ using UnityEngine.UI;
 
 public class CustomerSpawner : MonoBehaviour
 {
-    [SerializeField] string[] toppings;
-    [SerializeField] string[] bases;
+    [SerializeField] string[] toppings = new string[] {
+        "boba",
+        "flecks",
+        "sugar",
+        "truffle",
+        "kumquat",
+        "ambrosia",
+        "clouds",
+        "tears",
+        "jelly",
+        "beans"
+    };
+    [SerializeField] string[] bases = new string[] {
+        "chewy",
+        "luxe",
+        "saccharine",
+        "earthy",
+        "citrusy",
+        "refreshing",
+        "fluffy",
+        "intense",
+        "novel",
+        "calming"
+    };
 
     [SerializeField] ScriptableObject[] species;
 
@@ -19,6 +41,10 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] Sprite transparentSprite;
     [SerializeField] GameObject dialogue;
 
+    public GameObject player;
+    public AudioClip bells;
+    [SerializeField][Range(0f, 1f)] float vol = 1;
+
     void Start()
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
@@ -26,8 +52,6 @@ public class CustomerSpawner : MonoBehaviour
         clothes = customerObject.transform.Find("Clothes").GetComponent<Image>();
         other = customerObject.transform.Find("Other").GetComponent<Image>();
 
-        toppings = DrinkOptionHub.instance.toppings;
-        bases = DrinkOptionHub.instance.bases;
 
         dialogue.GetComponent<DialogueController>().QueueSequenceDialogue(ScenesManager.instance.currentDay);
 
@@ -55,6 +79,11 @@ public class CustomerSpawner : MonoBehaviour
         // Gives liked ingredients to the customer object
         customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
         dialogue.GetComponent<DialogueController>().QueuePreferences(drinkBase, ingredients);
+        GameObject source = Instantiate(player);
+        source.GetComponent<AudioSource>().clip = bells;
+        source.GetComponent<AudioSource>().volume = vol;
+        source.GetComponent<AudioSource>().Play();
+
         return ingredients;
     }
 

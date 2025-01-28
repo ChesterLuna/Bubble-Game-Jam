@@ -1,7 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickableButton : MonoBehaviour, ClickableAsset
 {
+
+    public Image image;
+
+    void Start()
+    {
+        image = GetComponent<Image>();
+        image.alphaHitTestMinimumThreshold = 1f;
+    }
 
     // Intented to be used for general UI buttons
     public void OnClick()
