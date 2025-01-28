@@ -8,7 +8,7 @@ public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager instance;
     public int currentDifficulty = 1;
-    [SerializeField] private int currentDay = 1;
+    [SerializeField] public int currentDay = 1;
     [SerializeField] Scene[] scenes;
     
 
@@ -38,7 +38,7 @@ public class ScenesManager : MonoBehaviour
     public void ChangeDay()
     {
         // Lowers or raises difficulty
-        if(ScoringSystem.instance.dailyScore < 0)
+        if(ScoringSystem.instance.PassedDaily())
         {
             LowerDifficulty();
         }
