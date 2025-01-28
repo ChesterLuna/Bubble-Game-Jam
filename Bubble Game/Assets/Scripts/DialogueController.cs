@@ -54,6 +54,11 @@ public class DialogueController : MonoBehaviour {
 
     }
 
+    public bool IsTalking()
+    {
+        return dialogueQueue.Count > 0;
+    }
+
 
     private string ReplacePreference(string dialogue, string topping)
     {

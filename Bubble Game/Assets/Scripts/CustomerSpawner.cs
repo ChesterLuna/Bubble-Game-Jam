@@ -32,6 +32,7 @@ public class CustomerSpawner : MonoBehaviour
         SpawnCustomer(1);
     }
 
+
     public string[] SpawnCustomer(int maxToppings)
     {
         string[] ingredients = GenerateCustomerIngredients(maxToppings);
@@ -55,6 +56,19 @@ public class CustomerSpawner : MonoBehaviour
         dialogue.GetComponent<DialogueController>().QueuePreferences(drinkBase, ingredients);
         return ingredients;
     }
+
+    public void CleanCustomer()
+    {
+        mainBody.sprite = transparentSprite;
+        hair.sprite = transparentSprite;
+        clothes.sprite = transparentSprite;
+        other.sprite = transparentSprite;
+
+        customerObject.GetComponent<Customer>().CleanCustomer();
+        dialogue.GetComponent<DialogueController>().ClearDialogue();
+    }
+
+
 
     private Species GetSpecies(string drinkBase)
     {

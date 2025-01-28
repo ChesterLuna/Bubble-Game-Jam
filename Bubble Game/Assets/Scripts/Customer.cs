@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
@@ -29,4 +30,14 @@ public class Customer : MonoBehaviour
         }
 
     }
+    public bool HasCustomer()
+    {
+        return favoriteIngredients != null;
+    }
+
+    public void CleanCustomer()
+    {
+        favoriteIngredients = null;
+    }
+
 }
