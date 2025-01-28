@@ -100,7 +100,8 @@ public class BobaCreator : MonoBehaviour
         }
         else
         {
-            ScenesManager.instance.ChangeDay();
+            levelManager.GetComponent<CustomerSpawner>().CleanCustomer();
+            dialogueController.DisplayOutro();
         }
     }
 

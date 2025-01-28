@@ -14,4 +14,13 @@ public class ScoringSystem : MonoBehaviour {
             Destroy(this);
         }
     }
+
+    public bool PassedDaily()
+    {
+        return dailyScore > 0;
+    }
+    public bool PassedGlobal()
+    {
+        return globalScore > goalScore;
+    }
 }

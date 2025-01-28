@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ClickableIngredient : MonoBehaviour, ClickableAsset
@@ -12,6 +13,8 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
     [SerializeField] bool scoopable = false; // So bases wouldnt be scoopable
     [SerializeField] Sprite ingredientSprite;
     [SerializeField] Sprite singleIngredientSprite;
+    [SerializeField] AudioClip audioToplay;
+    [SerializeField] GameObject clipPlayer;
 
     GameObject bobaCreator;
 
@@ -32,6 +35,20 @@ public class ClickableIngredient : MonoBehaviour, ClickableAsset
         {
             bobaCreator.GetComponent<BobaCreator>().AddTopping(ingredientName, ingredientSprite);
         }
+        PlayClip();
+
+    }
+
+    private void PlayClip()
+    {
+        if(audioToplay == null)
+        {
+            print("Tried to play a clip but was not able to");
+            return;
+        }
+        GameObject source = Instantiate(clipPlayer);
+        source.GetComponent<AudioSource>().clip = audioToplay;
+        source.GetComponent<AudioSource>().Play();
     }
 
     public void SwitchVisibility(GameObject gameObject)

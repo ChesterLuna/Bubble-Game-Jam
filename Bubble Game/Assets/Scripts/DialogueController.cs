@@ -8,10 +8,21 @@ public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
     [SerializeField] private Queue<string> dialogueQueue = new Queue<string>();
     [SerializeField] private GameObject nextButton;
+    
+    [SerializeField] private bool displayingIntro = true;
+    [SerializeField] GameObject levelManager;
+
+    [SerializeField] private bool displayingOutro;
+    [SerializeField] private List<GameObject> NPCsToSpawn;
+    [SerializeField] private List<int> dialogueToSpawnNPC;
+    [SerializeField] private List<int> soundToplay;
+    private int outroCounter;
 
     private void Start() {
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = "";
+        levelManager = GameObject.FindGameObjectWithTag("GameController");
+
     }
 
     private void Update() {
@@ -23,8 +34,42 @@ public class DialogueController : MonoBehaviour {
     }
 
     public void DisplayText() { // displays the text
+        if(displayingOutro)
+        {
+            if(dialogueToSpawnNPC.Count != 0)
+            {
+                if (dialogueToSpawnNPC[0] == outroCounter)
+                {
+                    NPCsToSpawn[0].gameObject.SetActive(true);
+                    dialogueToSpawnNPC.RemoveAt(0);
+                    NPCsToSpawn.RemoveAt(0);
+                }
+            }
+            if (soundToplay.Count != 0)
+            {
+                if (soundToplay[0] == outroCounter)
+                {
+                    // Play sound clip
+                }
+            }
+            outroCounter++;
+            if(dialogueQueue.Peek() == "ENDSCENE")
+            {
+                ScenesManager.instance.ChangeDay();
+            }
+        }
+        if (displayingIntro && dialogueQueue.Peek() == "ENDINTRO")
+        {
+            displayingIntro = false;
+            ClearDialogue();
+            levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(ScenesManager.instance.currentDifficulty);
+            levelManager.GetComponent<Timer>().StartTimer();
+            DisplayText();
+            return;
+        }
         string text = dialogueQueue.Dequeue();
         textComponent.text += "\n" + text;
+
     }
 
     public void QueuePreferences(string teaBase, string[] toppings) {
@@ -35,7 +80,7 @@ public class DialogueController : MonoBehaviour {
         string[] fillers = DrinkOptionHub.instance.fillers;
 
         for (int i = 1; i < toppings.Length; i++) {
-            if (i == 0) {
+            if (i == 1) {
                 options = DrinkOptionHub.instance.firstPreference;
             } else {
                 options = DrinkOptionHub.instance.laterPreferences;
@@ -81,5 +126,45 @@ public class DialogueController : MonoBehaviour {
         } else {
             dialogueQueue.Enqueue(GameplaySequenceHub.instance.playerName + "Day " + dayNum.ToString() + ". Time to get this bread.");
         }
+        dialogueQueue.Enqueue("ENDINTRO");
+        DisplayText();
+
+    }
+
+    public void QueueOutroDialogue(string key)
+    {
+        if (GameplaySequenceHub.instance.outroScene.ContainsKey(key))
+        {
+            foreach (string dialogue in GameplaySequenceHub.instance.outroScene[key])
+            {
+                dialogueQueue.Enqueue(dialogue);
+            }
+        }
+        else
+        {
+            dialogueQueue.Enqueue(GameplaySequenceHub.instance.playerName + "Day " + key + ". Time to get this bread.");
+        }
+    }
+
+    public void DisplayOutro()
+    {
+        displayingOutro = true;
+
+        string dayString = ScenesManager.instance.currentDay.ToString();
+
+        if (ScoringSystem.instance.PassedDaily())
+        {
+            dayString += "S";
+        }
+        else
+        {
+            dayString += "F";
+        }
+
+        QueueOutroDialogue(dayString);
+
+        dialogueQueue.Enqueue("ENDSCENE");
+
+        DisplayText();
     }
 }

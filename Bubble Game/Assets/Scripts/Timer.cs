@@ -3,7 +3,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [SerializeField] public float timeLeft = 60f;
-    public bool countingDown = true;
+    public bool countingDown = false;
 
 
     // Update is called once per frame
@@ -23,5 +23,10 @@ public class Timer : MonoBehaviour
     void TimerFinished()
     {
         // Switch day
+    }
+
+    public void StartTimer()
+    {
+        countingDown = true;
     }
 }
