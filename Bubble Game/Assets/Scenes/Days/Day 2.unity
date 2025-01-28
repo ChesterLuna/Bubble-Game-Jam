@@ -609,11 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679356248079094206, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4599905440411355651, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5043512562273788253, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
       propertyPath: m_Pivot.x
