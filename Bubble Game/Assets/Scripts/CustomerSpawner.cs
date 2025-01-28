@@ -12,18 +12,26 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] ScriptableObject[] species;
 
     [SerializeField] GameObject customerObject;
-    Image mainBody;
-    Image face;
-
+    [SerializeField] Image mainBody;
+    [SerializeField] Image hair;
+    [SerializeField] Image clothes;
+    [SerializeField] Image other;
+    [SerializeField] Sprite transparentSprite;
+    [SerializeField] GameObject dialogue;
 
     void Start()
     {
         mainBody = customerObject.transform.Find("MainBody").GetComponent<Image>();
-        face = customerObject.transform.Find("Feature (1)").GetComponent<Image>();
+        hair = customerObject.transform.Find("Hair").GetComponent<Image>();
+        clothes = customerObject.transform.Find("Clothes").GetComponent<Image>();
+        other = customerObject.transform.Find("Other").GetComponent<Image>();
 
         toppings = DrinkOptionHub.instance.toppings;
         bases = DrinkOptionHub.instance.bases;
+
+        SpawnCustomer(1);
     }
+
 
     public string[] SpawnCustomer(int maxToppings)
     {
@@ -32,23 +40,41 @@ public class CustomerSpawner : MonoBehaviour
         Species currentSpecies = GetSpecies(drinkBase);
 
         // Generate Race
-        Sprite speciesBody = currentSpecies.mainBody;
+        Sprite speciesBody = ChooseRandom(currentSpecies.mainBody);
         mainBody.sprite = speciesBody;
 
         // Generate Features
-        Sprite speciesFace = ChooseRandom(currentSpecies.faceFeatures);
-        face.sprite = speciesFace;
+        Sprite hairFeature = ChooseRandom(currentSpecies.hairFeatures);
+        hair.sprite = hairFeature;
+        Sprite clothesFeature = ChooseRandom(currentSpecies.clothesFeatures);
+        clothes.sprite = clothesFeature;
+        Sprite otherFeature = ChooseRandom(currentSpecies.otherFeatures);
+        other.sprite = otherFeature;
 
         // Gives liked ingredients to the customer object
         customerObject.GetComponent<Customer>().favoriteIngredients = ingredients;
+        dialogue.GetComponent<DialogueController>().QueuePreferences(drinkBase, ingredients);
         return ingredients;
     }
+
+    public void CleanCustomer()
+    {
+        mainBody.sprite = transparentSprite;
+        hair.sprite = transparentSprite;
+        clothes.sprite = transparentSprite;
+        other.sprite = transparentSprite;
+
+        customerObject.GetComponent<Customer>().CleanCustomer();
+        dialogue.GetComponent<DialogueController>().ClearDialogue();
+    }
+
+
 
     private Species GetSpecies(string drinkBase)
     {
         foreach (Species theSpecies in species)
         {
-            if(theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
+            if (theSpecies.speciesName == DrinkOptionHub.instance.drinksToSpecies[drinkBase])
             {
                 return theSpecies;
             }
@@ -97,8 +123,8 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (choices.Length == 0)
         {
-            Debug.LogError("There are no Sprite choices.");
-            return null;
+            print("There are no Sprite choices.");
+            return transparentSprite;
         }
 
         Sprite chosenOption = choices[Random.Range(0, choices.Length)];

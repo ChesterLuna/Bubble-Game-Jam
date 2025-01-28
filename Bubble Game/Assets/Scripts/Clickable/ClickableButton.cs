@@ -8,4 +8,24 @@ public class ClickableButton : MonoBehaviour, ClickableAsset
     {
         print("This button has no implementation");
     }
+
+    public void SwitchVisibility(GameObject gameObject)
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+    }
+
+    public void DestroyObject(GameObject gameObject)
+    {
+        Destroy(gameObject);
+    }
+
+    public void HideObject(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ShowObject(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
+    }
 }

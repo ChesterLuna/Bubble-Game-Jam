@@ -15,6 +15,10 @@ public class BobaCreator : MonoBehaviour
     [SerializeField] Customer customer;
 
     [SerializeField] GameObject levelManager;
+    [SerializeField] Sprite transparentSprite;
+
+    [SerializeField] DialogueController dialogueController;
+    [SerializeField] Button serveButton;
 
     private void Start()
     {
@@ -53,7 +57,7 @@ public class BobaCreator : MonoBehaviour
         currentToppings.Clear();
         currentBase = "";
 
-        currentBaseImage.sprite = null;
+        currentBaseImage.sprite = transparentSprite;
         
         // Destroy all children
         int childrenCount = toppings.transform.childCount;
@@ -63,15 +67,36 @@ public class BobaCreator : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (customer.favoriteIngredients == null || dialogueController.IsTalking())
+        {
+            serveButton.interactable = false;
+        }
+        else
+        {
+            serveButton.interactable = true;
+        }
+    }
+
     public void ServeBoba()
     {
+        if (customer.favoriteIngredients == null || dialogueController.IsTalking())
+        {
+            print("Tried to serve drink but there is no customer or a customer is currently talking");
+            return;
+        }
+
         currentToppings.Add(currentBase);
         customer.CheckCorrectIngredients(currentToppings.ToArray());
         DeleteBoba();
+        dialogueController.ClearDialogue();
 
-        if(levelManager.GetComponent<Timer>().timeLeft >= 0)
+
+        if (levelManager.GetComponent<Timer>().timeLeft >= 0)
         {
             levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(ScenesManager.instance.currentDifficulty);
+            dialogueController.DisplayText();
         }
         else
         {

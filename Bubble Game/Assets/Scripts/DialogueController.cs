@@ -1,33 +1,17 @@
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
+// using static UnityEditor.ShaderKeywordFilter.FilterAttribute;
 
 public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
-    private Queue<string> dialogueQueue = new Queue<string>();
+    [SerializeField] private Queue<string> dialogueQueue = new Queue<string>();
     [SerializeField] private GameObject nextButton;
 
     private void Start() {
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = "";
-
-        // Testing purposes, remove later
-        QueuePreferences("fruit", new string[] {
-            "boba",
-            "flecks",
-            "sugar",
-            "truffle",
-            "kumquat",
-            "ambrosia",
-            "clouds",
-            "tears",
-            "jelly",
-            "beans"
-        });
-        Debug.Log(dialogueQueue.Count);
     }
 
     private void Update() {
@@ -44,27 +28,48 @@ public class DialogueController : MonoBehaviour {
     }
 
     public void QueuePreferences(string teaBase, string[] toppings) {
-        string name = "<color=#11AA00>" + DrinkOptionHub.instance.drinksToSpecies[teaBase] + "</color>: ";
+        string creatureName = DrinkOptionHub.instance.drinksToSpecies[teaBase];
+        creatureName = creatureName[0].ToString().ToUpper() + creatureName.Substring(1);
+        string name = "<color=#11AA00>" + creatureName + "</color>: ";
         string[] options;
         string[] fillers = DrinkOptionHub.instance.fillers;
 
-        dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // add a filler at the start
-
-        for (int i = 0; i < toppings.Length; i++) {
+        for (int i = 1; i < toppings.Length; i++) {
             if (i == 0) {
                 options = DrinkOptionHub.instance.firstPreference;
             } else {
                 options = DrinkOptionHub.instance.laterPreferences;
             }
 
-            if (Random.Range(0, 10) == 0) {
+
+            string chosenDialogue = options[Random.Range(0, options.Length)];
+
+            string dial = ReplacePreference(chosenDialogue, toppings[i]);
+            dialogueQueue.Enqueue(name + dial);
+            if (Random.Range(0, 10) == 0)
+            {
                 dialogueQueue.Enqueue(name + fillers[Random.Range(0, fillers.Length)]); // randomly add filler
             }
-
-            string dial = options[Random.Range(0, options.Length)].Replace("_", "<color=#0088AA>" + DrinkOptionHub.instance.toppingsToProperties[toppings[i]] + "</color>");
-            dialogueQueue.Enqueue(name + dial);
         }
 
+    }
+
+    public bool IsTalking()
+    {
+        return dialogueQueue.Count > 0;
+    }
+
+
+    private string ReplacePreference(string dialogue, string topping)
+    {
+        string preference = DrinkOptionHub.instance.toppingsToProperties[topping];
+        return dialogue.Replace("_", "<color=#0088AA>" + preference + "</color>");
+    }
+
+    public void ClearDialogue()
+    {
+        dialogueQueue.Clear();
+        textComponent.text = "";
 
     }
 
