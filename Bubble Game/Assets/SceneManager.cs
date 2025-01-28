@@ -9,7 +9,7 @@ public class ScenesManager : MonoBehaviour
     public static ScenesManager instance;
     public int currentDifficulty = 1;
     [SerializeField] public int currentDay = 1;
-    [SerializeField] Scene[] scenes;
+    [SerializeField] String[] scenes;
     
 
     private void Awake()
@@ -51,7 +51,7 @@ public class ScenesManager : MonoBehaviour
 
         //Change Scene
         currentDay++;
-        SceneManager.LoadScene(scenes[currentDay].name);
+        SceneManager.LoadScene(scenes[currentDay-1]);
     }
 
     public void LoadNextScene(string sceneName)
