@@ -67,4 +67,14 @@ public class DialogueController : MonoBehaviour {
 
 
     }
+
+    public void QueueSequenceDialogue(int dayNum) {
+        if (GameplaySequenceHub.instance.dayScene.ContainsKey(dayNum)) {
+            foreach (string dialogue in GameplaySequenceHub.instance.dayScene[dayNum]) {
+                dialogueQueue.Enqueue(GameplaySequenceHub.instance.playerName + dialogue);
+            }
+        } else {
+            dialogueQueue.Enqueue(GameplaySequenceHub.instance.playerName + "Day " + dayNum.ToString() + ". Time to get this bread.");
+        }
+    }
 }
