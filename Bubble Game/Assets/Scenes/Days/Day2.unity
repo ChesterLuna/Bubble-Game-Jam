@@ -374,6 +374,30 @@ PrefabInstance:
       propertyPath: customerObject
       value: 
       objectReference: {fileID: 908864895}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: species.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: 'species.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7de6d54882421b0468b9d3d99953fdc3, type: 2}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: 'species.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e7809e016a9a9794abc90ea5d4b36162, type: 2}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: 'species.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 447698855e58d18478a70979672f7ca1, type: 2}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: 'species.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 22846b3ad697e9c40af6802b10feb861, type: 2}
+    - target: {fileID: 3915046695642047101, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
+      propertyPath: 'species.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 22846b3ad697e9c40af6802b10feb861, type: 2}
     - target: {fileID: 5493204041784041604, guid: 73fa1ae21ee17ff45b9dcfb25afbf0f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -492,6 +516,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2181733100324001783, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
+      propertyPath: NPCsToSpawn.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2181733100324001783, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
+      propertyPath: 'NPCsToSpawn.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7921843963956156298}
     - target: {fileID: 5043512562273788253, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -577,6 +609,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
+--- !u!1 &7921843963956156298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8580548709118704798, guid: 5801fd916be999f4aa09e0db46a3b7a7, type: 3}
+  m_PrefabInstance: {fileID: 7921843963956156297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
