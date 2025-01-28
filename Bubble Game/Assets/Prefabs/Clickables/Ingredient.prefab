@@ -288,6 +288,8 @@ MonoBehaviour:
   scoopable: 0
   ingredientSprite: {fileID: 0}
   singleIngredientSprite: {fileID: 0}
+  audioToplay: {fileID: 0}
+  clipPlayer: {fileID: 3737242601552997965, guid: 4738328d7dad07e49a9434039aa6e019, type: 3}
 --- !u!114 &821603937974817449
 MonoBehaviour:
   m_ObjectHideFlags: 0
