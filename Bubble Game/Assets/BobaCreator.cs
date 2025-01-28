@@ -18,6 +18,7 @@ public class BobaCreator : MonoBehaviour
     [SerializeField] Sprite transparentSprite;
 
     [SerializeField] DialogueController dialogueController;
+    [SerializeField] Button serveButton;
 
     private void Start()
     {
@@ -63,6 +64,18 @@ public class BobaCreator : MonoBehaviour
         for (int i = 0; i < childrenCount; i++)
         {
             Destroy(toppings.transform.GetChild(i).gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (customer.favoriteIngredients == null || dialogueController.IsTalking())
+        {
+            serveButton.interactable = false;
+        }
+        else
+        {
+            serveButton.interactable = true;
         }
     }
 

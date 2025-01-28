@@ -900,11 +900,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2420030991670025505, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
       propertyPath: m_Name
-      value: UI Button (1)
+      value: Serve Button
       objectReference: {fileID: 0}
     - target: {fileID: 3202702927891122776, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
       propertyPath: m_text
       value: Serve
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490961264094227759, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490961264094227759, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490961264094227759, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.38679248
       objectReference: {fileID: 0}
     - target: {fileID: 6490961264094227759, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3380,6 +3392,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1600391564480742315, guid: 466baf9789da00245ad85bd8cd692b0a, type: 3}
   m_PrefabInstance: {fileID: 1135569282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1175371330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490961264094227759, guid: 236a7ce9744e1544c899ffb68f14e889, type: 3}
+  m_PrefabInstance: {fileID: 351350362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187269517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,6 +6129,10 @@ PrefabInstance:
       propertyPath: customer
       value: 
       objectReference: {fileID: 908864896}
+    - target: {fileID: 2716444127280549885, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
+      propertyPath: serveButton
+      value: 
+      objectReference: {fileID: 1175371330}
     - target: {fileID: 2716444127280549885, guid: ec52ccd25edd3fa45bc521654db72b71, type: 3}
       propertyPath: transparentSprite
       value: 
