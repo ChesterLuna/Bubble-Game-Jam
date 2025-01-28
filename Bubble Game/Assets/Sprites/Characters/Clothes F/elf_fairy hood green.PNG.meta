@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 69e0a02f34b699f4fb9653aeee851ce8
+guid: a4f3aba6bbbad794f9cbbc7e0891d23a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4742348965795730439
-    second: elf_fairy_demon septum_0
+      213: 7659083776261694835
+    second: elf_fairy hood green_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: elf_fairy_demon septum_0
+      name: elf_fairy hood green_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 100
-        height: 100
+        width: 92
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fbedccddbacf2eb0800000000000000
-      internalID: -4742348965795730439
+      spriteID: 375290d6d188a4a60800000000000000
+      internalID: 7659083776261694835
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      elf_fairy_demon septum_0: -4742348965795730439
+      elf_fairy hood green_0: 7659083776261694835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
