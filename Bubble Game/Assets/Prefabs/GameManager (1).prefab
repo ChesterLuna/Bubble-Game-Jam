@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5098919793863077077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016880242180949641}
+  - component: {fileID: 1213298444618467914}
+  - component: {fileID: 2669176199586509050}
+  - component: {fileID: 3977162925521318637}
+  - component: {fileID: 3384629880084003828}
+  m_Layer: 0
+  m_Name: GameManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016880242180949641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098919793863077077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1718086, y: 0.12366796, z: 0.038787756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1213298444618467914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098919793863077077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c550abe46e09a46b808da637d5722b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guidebookPrefab: {fileID: 7270251727814775632, guid: 5d84b339d5e000a44a05d60fc36fd376, type: 3}
+  guidebookParent: {fileID: 0}
+  toppings:
+  - boba
+  - flecks
+  - sugar
+  - truffle
+  - kumquat
+  - ambrosia
+  - clouds
+  - tears
+  - jelly
+  - beans
+  properties:
+  - chewy
+  - luxe
+  - saccharine
+  - earthy
+  - citrusy
+  - refreshing
+  - fluffy
+  - intense
+  - novel
+  - calming
+  bases:
+  - fruit
+  - green
+  - milk
+  - oolong
+  - black
+  firstPreference:
+  - Something that is _ please!
+  - Today I think I'm in the mood for something _.
+  - Perhaps a drink that is _ would be best.
+  - Hmmm, _ sounds good I think...?
+  - I would quite like a tea that is _.
+  - I heard that a drink that is _ is quite good?
+  - Could I please have a tea that is _.
+  - The only thing that would get me going today is something that is _!
+  - Uh... _ please...
+  - I demand a drink that is _, quick quick!
+  laterPreferences:
+  - Oh! And add something _ please!
+  - I think a drink that's _ as well sounds quite good, no?
+  - Perhaps add something _.
+  - I would like for you to add something that is _ if that's possible.
+  - I would also like it to be _ by the way.
+  - Sorry but could you also add something _?
+  - Actually, I also want the drink to be _ if you could add that please!
+  - _! If it's not too late, also add something for that!
+  - Umm... if it's not too much trouble please add something _...
+  - I insist that the drink is also _.
+  fillers:
+  - The weather's quite nice today, isn't it?! Perfect for a walk!
+  - You know, there's been some town drama stirring up... actually, forget I said
+    anything.
+  - Work has been tough y'know, slaying monsters and all... Think I need a career
+    change.
+  - You know that elf who lives down the block? I wanna send them a love letter but
+    I'm nervous!
+  - I've heard some good things about this place so I'm here to try it out!
+  - So... what do humans do without tails or wings or super strength?
+  - Ridiculous... oh sorry, I'm not talking about you. I mean the voices in my head.
+  - The children are interested in your drinks but us adults need to make sure it's
+    safe first!
+  - I'm sure your ingredients are locally sourced natural products, right?
+  - I'm a local food and drink critique for the town paper! I look forward to this
+    experience.
+  - It's so nice that there's a tavern that doesn't just serve drafts of beer and
+    ale.
+  - I think you're doing that wrong, I would know! I've poured water before!
+  - A group of fairies came into my shop and messed up my displays!
+  - I love dwarves, probably the best creatures around.
+  - Demons seem scary but they can actually be really nice!
+  - I wish more orcs would move into town, they just have such a unique charm...
+  - Have you considered adding phoenix feathers to your ingredients? You should!
+  - I'm not too sure about your human drink but as they say, don't knock it til you
+    try it.
+  - I just went shopping the other day and now I'm fabulous!
+  - Could you hurry it up? The children are waiting for me.
+--- !u!114 &2669176199586509050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098919793863077077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4832a77c132e646b24f80cacc1aa34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalScore: 0
+  dailyScore: 0
+  goalScore: 50
+--- !u!114 &3977162925521318637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098919793863077077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 121ce63c6957dc54197785c696002865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDifficulty: 1
+  currentDay: 1
+  scenes: []
+--- !u!114 &3384629880084003828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098919793863077077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3764c4a1db6d2e488fc1dc02833411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: '<color=#8800AA>You: </color>'
