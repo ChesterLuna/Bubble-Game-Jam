@@ -29,7 +29,8 @@ public class CustomerSpawner : MonoBehaviour
         toppings = DrinkOptionHub.instance.toppings;
         bases = DrinkOptionHub.instance.bases;
 
-        SpawnCustomer(1);
+        dialogue.GetComponent<DialogueController>().QueueSequenceDialogue(ScenesManager.instance.currentDay);
+
     }
 
 

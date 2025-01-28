@@ -8,6 +8,9 @@ public class DialogueController : MonoBehaviour {
     private TextMeshProUGUI textComponent = null;
     [SerializeField] private Queue<string> dialogueQueue = new Queue<string>();
     [SerializeField] private GameObject nextButton;
+    
+    [SerializeField] private bool displayingIntro = true;
+    [SerializeField] GameObject levelManager;
 
     [SerializeField] private bool displayingOutro;
     [SerializeField] private List<GameObject> NPCsToSpawn;
@@ -18,6 +21,8 @@ public class DialogueController : MonoBehaviour {
     private void Start() {
         textComponent = GetComponent<TextMeshProUGUI>();
         textComponent.text = "";
+        levelManager = GameObject.FindGameObjectWithTag("GameController");
+
     }
 
     private void Update() {
@@ -53,8 +58,18 @@ public class DialogueController : MonoBehaviour {
                 ScenesManager.instance.ChangeDay();
             }
         }
+        if (displayingIntro && dialogueQueue.Peek() == "ENDINTRO")
+        {
+            displayingIntro = false;
+            ClearDialogue();
+            levelManager.GetComponent<CustomerSpawner>().SpawnCustomer(ScenesManager.instance.currentDifficulty);
+            levelManager.GetComponent<Timer>().StartTimer();
+            DisplayText();
+            return;
+        }
         string text = dialogueQueue.Dequeue();
         textComponent.text += "\n" + text;
+
     }
 
     public void QueuePreferences(string teaBase, string[] toppings) {
@@ -111,6 +126,9 @@ public class DialogueController : MonoBehaviour {
         } else {
             dialogueQueue.Enqueue(GameplaySequenceHub.instance.playerName + "Day " + dayNum.ToString() + ". Time to get this bread.");
         }
+        dialogueQueue.Enqueue("ENDINTRO");
+        DisplayText();
+
     }
 
     public void QueueOutroDialogue(string key)
