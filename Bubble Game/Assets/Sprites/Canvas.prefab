@@ -1674,19 +1674,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2146045917196079444, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 245
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2155582999307853511, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 245
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3976869796889663186, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 245
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7535892276088043464, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 245
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7785274643877508736, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_Pivot.x
