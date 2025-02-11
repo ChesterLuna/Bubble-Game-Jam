@@ -1484,21 +1484,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5043512562273788253}
     m_Modifications:
+    - target: {fileID: 693264678016769898, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6127082288282031244, guid: 6873999437e4d5f4d9da9aaaae2abe65, type: 3}
     - target: {fileID: 2146045917196079444, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 2155582999307853511, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 3976869796889663186, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 7535892276088043464, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 7785274643877508736, guid: 3f1f88b4946478f47afe2e61ddb6df92, type: 3}
       propertyPath: m_Pivot.x
